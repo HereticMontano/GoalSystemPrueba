@@ -1,9 +1,11 @@
 ﻿using GoalSystemPrueba.Enum;
 using System;
-using System.ComponentModel.DataAnnotations;
 
 namespace GoalSystemPrueba.Models.Api
 {
+    /// <summary>
+    /// Clase que modela las propiedades de un elemento.
+    /// </summary>
     public class ElementoModel
     {                
         public string Nombre { get; set; }

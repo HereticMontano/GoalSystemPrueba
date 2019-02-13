@@ -1,7 +1,7 @@
 ﻿
 namespace GoalSystemPrueba.Models
 {
-    public class HomeViewModel:BaseViewModel
+    public class HomeViewModel : BaseViewModel
     {
     }
 }

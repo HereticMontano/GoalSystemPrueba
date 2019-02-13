@@ -4,7 +4,7 @@
 		method: 'POST',
 		data: { Nombre: $("#Nombre").val(), Tipo: parseInt($("#Tipo").val()), FechaCaducidad: moment($("#Fecha").val(), "dd/MM/yyyy").format("MM/DD/YY") }
 	}).done(function () {		
-		M.toast({ html: '"Se dio de alta correctamente"' })
+		M.toast({ html: "Se dio de alta correctamente" })
 	});
 }
 

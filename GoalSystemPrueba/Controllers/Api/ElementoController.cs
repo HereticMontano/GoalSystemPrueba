@@ -2,9 +2,14 @@
 using GoalSystemPrueba.Models.Api;
 using System.Web.Http;
 using System;
+using GoalSystemPrueba.Atributos;
 
 namespace GoalSystemPrueba.Controllers.Api
 {
+    /// <summary>
+    /// Clase que se encarga de la alta/baja de los elementos
+    /// </summary>
+    [Seguridad]
     public class ElementoController : ApiController
     {
         [HttpPost]
