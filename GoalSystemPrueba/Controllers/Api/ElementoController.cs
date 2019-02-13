@@ -1,22 +1,23 @@
 ﻿using GoalSystemPrueba.Dato;
 using GoalSystemPrueba.Models.Api;
 using System.Web.Http;
-using System.Web.Mvc;
+using System;
 
 namespace GoalSystemPrueba.Controllers.Api
 {
     public class ElementoController : ApiController
-    {        
-
+    {
+        [HttpPost]
         public void AgregarElemento(ElementoModel elemento)
         {
             DatosElementos.FuenteDatos.Add(elemento);
         }
 
-        public JsonResult QuitarElemento(string nombre)
+        [HttpPost]
+        public int QuitarElemento([FromBody]string nombre)
         {
-
-            return new JsonResult();
+           return DatosElementos.FuenteDatos.RemoveAll(x => x.Nombre.Equals(nombre, StringComparison.OrdinalIgnoreCase));
+           
         }
     }
 }

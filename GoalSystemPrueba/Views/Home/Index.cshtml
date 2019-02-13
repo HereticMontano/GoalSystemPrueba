@@ -2,41 +2,45 @@
 @using GoalSystemPrueba.Enum
 @using GoalSystemPrueba.Dato;
 
-<script>
-	function agregarElemento() {
-	}
+@Scripts.Render("~/bundles/JSHome")
 
-	function quitarElemento() {
-	}
-</script>
+@section scripts
+{
+	<script>
+		$(function () {
+			$('select').formSelect();
+			$('.fecha').datepicker({ format: 'dd/mm/yyyy' });
+		});
+	</script>
+}
 
-<div id="Alta">
-	<h3>Lista elementos</h3>
+
+<div id="ListaElementos">
+	<h4>Lista elementos</h4>
 	@foreach (var elemento in DatosElementos.FuenteDatos)
 	{
-	<div>
-		Nombre: @Html.Label(elemento.Nombre)
-		Tipo: @Html.Label(elemento.Tipo.ToString())
-		Fecha: @Html.Label(elemento.FechaCaducidad.ToString("dd/MM/yyyy"))
-		Caduca: @Html.Label(elemento.Caducado.ToString())
-	</div>
+		<div>
+			Nombre: @Html.Label(elemento.Nombre)
+			Tipo: @Html.Label(elemento.Tipo.ToString())
+			Fecha: @Html.Label(elemento.FechaCaducidad.ToString("dd/MM/yyyy"))
+			Caducado: @Html.Label(elemento.Caducado.ToString())
+		</div>
 	}
 
 </div>
 
-
 <div id="Alta">
-	<h3>Agregar Elemento</h3>
-	Nombre: @Html.TextBox("Nombre", null, new { @class = "form-control" })
-	Tipo: @Html.DropDownList("Tipo", EnumHelper.GetSelectList(typeof(TipoElementoEnum)) ,"Selecciona el tipo",new { @class = "form-control" })
-	Fecha caducidad: @Html.TextBox("Fecha", null, new { @class = "form-control" })
-	<br />
-	<button onclick="agregarElemento()">Agregar elemento nuevo</button>
+	<h4>Agregar Elemento</h4>
+	Nombre: @Html.TextBox("Nombre", null)
+	Tipo: @Html.DropDownList("Tipo", EnumHelper.GetSelectList(typeof(TipoElementoEnum)), "Selecciona el tipo")
+	Fecha caducidad: @Html.TextBox("Fecha", DateTime.Now.ToString("dd/MM/yyyy"), new { @class = "fecha" })
+	<br />	
+	<a class="waves-effect waves-light btn" onclick="agregarElemento('@Url.Action("AgregarElemento", "Api/Elemento")')">Agregar elemento</a>
 </div>
 
 <div id="Baja">
-	<h3>Eliminar Elemento</h3>
-	Nombre: @Html.TextBox("NombreEliminar", null, new { @class = "form-control" })
+	<h4>Eliminar Elemento</h4>
+	Nombre: @Html.TextBox("NombreEliminar", null)
 	<br />
-	<button onclick="quitarElmento()">Eliminar elemento</button>
+	<a class="waves-effect waves-light btn" onclick="quitarElemento('@Url.Action("QuitarElemento", "Api/Elemento")')">Eliminar elemento</a>	
 </div>
