@@ -160,9 +160,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Atributos\Seguridad.cs" />
+    <Compile Include="Atributos\SeguridadAttribute.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Dato\DatosElementos.cs" />
     <Compile Include="Enum\TipoElementoEnum.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -225,6 +224,16 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GoalSystemPrueba.Notifica\GoalSystemPrueba.Notifica.csproj">
+      <Project>{b48f682c-8483-40a3-a03a-94c0a32a9728}</Project>
+      <Name>GoalSystemPrueba.Notifica</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GoalSystemPrueba.Provider\GoalSystemPrueba.Provider.csproj">
+      <Project>{470829cf-05d7-4937-946e-ad33e3b3dad1}</Project>
+      <Name>GoalSystemPrueba.Provider</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

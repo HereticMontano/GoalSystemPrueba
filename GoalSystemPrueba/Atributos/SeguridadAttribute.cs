@@ -5,7 +5,7 @@ using System.Web.Http.Controllers;
 namespace GoalSystemPrueba.Atributos
 {
     [AttributeUsage(AttributeTargets.Class)]
-    public class Seguridad: AuthorizeAttribute
+    public class SeguridadAttribute: AuthorizeAttribute
     {
         protected override bool IsAuthorized(HttpActionContext actionContext)
         {

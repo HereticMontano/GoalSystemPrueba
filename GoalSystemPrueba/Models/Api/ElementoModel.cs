@@ -10,7 +10,6 @@ namespace GoalSystemPrueba.Models.Api
     {                
         public string Nombre { get; set; }
         public TipoElementoEnum Tipo { get; set; }        
-        public DateTime FechaCaducidad { get; set; }       
-        public bool Caducado { get { return FechaCaducidad <= DateTime.Now; } }
+        public DateTime FechaCaducidad { get; set; }               
     }
 }

@@ -1,6 +1,5 @@
 ﻿@model GoalSystemPrueba.Models.HomeViewModel
 @using GoalSystemPrueba.Enum
-@using GoalSystemPrueba.Dato;
 
 @Scripts.Render("~/bundles/JSHome")
 
@@ -15,19 +14,18 @@
 }
 
 
-<div id="ListaElementos">
-	<h4>Lista elementos</h4>
-	@foreach (var elemento in DatosElementos.FuenteDatos)
-	{
-		<div>
-			Nombre: @Html.Label(elemento.Nombre)
-			Tipo: @Html.Label(elemento.Tipo.ToString())
-			Fecha: @Html.Label(elemento.FechaCaducidad.ToString("dd/MM/yyyy"))
-			Caducado: @Html.Label(elemento.Caducado.ToString())
-		</div>
-	}
+	<div id="ListaElementos">
+		<h4>Lista elementos en base</h4>
+		@foreach (var elemento in Model.Datos)
+		{
+			<div>
+				Nombre: @Html.Label(elemento.Nombre)
+				Tipo: @Html.Label(elemento.Tipo.ToString())
+				Fecha: @Html.Label(elemento.FechaCaducidad.ToString("dd/MM/yyyy"))
+			</div>
+		}
 
-</div>
+	</div>
 
 <div id="Alta">
 	<h4>Agregar Elemento</h4>

@@ -3,8 +3,13 @@
 ## Forma de ejecución
 Ejecutar directamente desde visual studio utilizando IIS Express (recomendado) o creando un sitio en IIS y publicándolo en el.
 
+## Arquitectura
+Un simple arquitectura en capa, la capa de presentacion, y la de datos se an modelado. 
+
+No se implemento la capa de negocios para simplificar un poco, ya que casi no hay logica de negocios y seria solo un pasa manos.
+
 ## Datos
-El mock de los datos lo hago con una clase estática (DatosElementos) que contien una lista de elementos hardcodeados
+El mock de los datos se encuentran en InventarioProvider en una propiedad estatica.
 
 ## Validaciones y seguridad
 No hago ninguna validación de formatos y campos obligatorios por cuestiones de tiempo (Pero debería hacerlas tanto del lado del cliente como del servidor).
@@ -17,5 +22,3 @@ Mas que todo para enviar la fecha de caducidad a la acción "AgregarElemento" ya
 
 Probablemente haya soluciones mas robustas con respecto a la configuración del formato de fecha que esta esperando. Pero esta es la mas simple y rápida que decidí implementar.
 
-## Asunciones del punto 1.3	
-Cuando se logra eliminar un elemento como indica en el punto 1.2, hago que la acción “QuitarElemento” retorne el numero de eliminaciones que hubo para notificarlo. Si hubo 0 eliminaciones no notifico.
