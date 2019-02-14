@@ -9,6 +9,9 @@ Una simple arquitectura en capas, la capa de presentación, y la de datos se han
 
 No se implemento la capa de negocios para simplificar un poco, ya que casi no hay logica de negocios y seria solo un pasa manos.
 
+## Notificador
+Hice que el notificador sea su propio proyecto para poder escalarlo y reutilizarlo mas fácilmente, por ahora notificaría solo a través de httpClient, pero también se podrían mandar mails o cualquier otro medio de comunicación.
+
 ## Datos
 El mock de los datos se encuentran en InventarioProvider en una propiedad estática.
 
