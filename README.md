@@ -1,4 +1,4 @@
-# GoalSystem Prueba
+# GoalSystems Prueba
 
 ## Forma de ejecución
 Para probar los 4 puntos hay unit test por cada punto.
