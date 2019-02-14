@@ -4,6 +4,9 @@ using System.Threading.Tasks;
 
 namespace GoalSystemPrueba.Notifica
 {
+    /// <summary>
+    /// Objeto que se encarga de la notificacion entre sistemas
+    /// </summary>
     public class Notificador
     {
         public Uri Domain;

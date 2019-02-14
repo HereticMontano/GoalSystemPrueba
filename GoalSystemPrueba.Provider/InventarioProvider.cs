@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace GoalSystemPrueba.Provider
 {
+    /// <summary>
+    /// El provider de la "tabla" en base de inventario
+    /// </summary>
     public class InventarioProvider
     {
         private static List<Elemento> FuenteDatos = new List<Elemento>
