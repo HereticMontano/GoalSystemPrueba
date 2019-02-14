@@ -13,23 +13,39 @@ namespace GoalSystemPrueba.Notifica
             Domain = new Uri(domain);
         }
 
-        public async Task<bool> NotificarEliminaciones(string elemento)
+        public bool NotificarEliminaciones(string elemento)
         {
             using (var client = GenerarCliente())
             {
-                HttpResponseMessage response = await client.PostAsJsonAsync("api/Informacion/Eliminacion", new { ElementoEliminado = elemento });
+                //Esto va a elevar una exepcion ya que a la URL que se le informa no existe
+                try
+                {
+                    var response = client.PostAsJsonAsync("api/Informacion/Eliminacion", new { ElementoEliminado = elemento }).Result;
 
-                return response.IsSuccessStatusCode;
+                    return response.IsSuccessStatusCode;
+                }
+                catch
+                {
+                    return false;
+                }
             }
         }
 
-        public async Task<bool> NotificarVencimiento(string elemento)
+        public bool NotificarVencimiento(string elemento)
         {
             using (var client = GenerarCliente())
             {
-                HttpResponseMessage response = await client.PostAsJsonAsync("api/Informacion/Vencimiento", new { ElementoVencido = elemento });
+                //Esto va a elevar una exepcion ya que a la URL que se le informa no existe
+                try
+                {
+                    var response = client.PostAsJsonAsync("api/Informacion/Vencimiento", new { ElementoVencido = elemento }).Result;
 
-                return response.IsSuccessStatusCode;
+                    return response.IsSuccessStatusCode;
+                }
+                catch
+                {
+                    return false;
+                }
             }
         }
 
@@ -37,6 +53,7 @@ namespace GoalSystemPrueba.Notifica
         {
             var cliente = new HttpClient();
             cliente.BaseAddress = Domain;
+            cliente.Timeout = TimeSpan.FromSeconds(1);            
 
             return cliente;
         }

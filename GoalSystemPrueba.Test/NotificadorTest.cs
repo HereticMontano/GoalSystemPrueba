@@ -11,17 +11,18 @@ namespace GoalSystemPrueba.Test
         public void NotificarEliminacion()
         {
             Notificador not = new Notificador("http://www.ejemplo.com");
-            Task<bool> t = not.NotificarEliminaciones("Cuadro");
+            bool result = not.NotificarEliminaciones("Cuadro");
           
-            Assert.IsFalse(t.Result);
+            Assert.IsFalse(result);
         }
 
+        [TestMethod]
         public void NotificarVencimiento()
         {
             Notificador not = new Notificador("http://www.ejemplo.com");
-            Task<bool> t = not.NotificarVencimiento("Cuadro");
+            bool result = not.NotificarVencimiento("Cuadro");
 
-            Assert.IsFalse(t.Result);
+            Assert.IsFalse(result);
         }
     }
 }

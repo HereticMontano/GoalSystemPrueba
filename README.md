@@ -1,22 +1,28 @@
 # GoalSystem Prueba
 
 ## Forma de ejecución
-Ejecutar directamente desde visual studio utilizando IIS Express (recomendado) o creando un sitio en IIS y publicándolo en el.
+Para probar los 4 puntos hay unit test por cada punto.
+Si se desea probar el punto 1.1 y 1.2 con una interfaz ejecutar directamente desde visual studio utilizando IIS Express (recomendado) o creando un sitio en IIS y publicándolo en el.
 
 ## Arquitectura
-Un simple arquitectura en capa, la capa de presentacion, y la de datos se an modelado. 
+Una simple arquitectura en capas, la capa de presentación, y la de datos se han modelado. 
 
 No se implemento la capa de negocios para simplificar un poco, ya que casi no hay logica de negocios y seria solo un pasa manos.
 
 ## Datos
-El mock de los datos se encuentran en InventarioProvider en una propiedad estatica.
+El mock de los datos se encuentran en InventarioProvider en una propiedad estática.
 
 ## Validaciones y seguridad
-No hago ninguna validación de formatos y campos obligatorios por cuestiones de tiempo (Pero debería hacerlas tanto del lado del cliente como del servidor).
+Asumo que puede haber nombres repetidos en la lista de inventario.
 
-Tampoco de seguridad por el mismo motivo, de todas formas modele un atributo que hereda de “AuthorizeAttribute” y se usa a la altura de la clase “ElementoController” 	
+No hago ninguna validación de formatos y campos obligatorios por cuestiones de tiempo (Pero debería hacerse tanto del lado del cliente como del servidor).
 
-## Utilización de librerías externas
+Tampoco de seguridad por el mismo motivo, de todas formas, modele un atributo que hereda de “AuthorizeAttribute” y se usa a la altura de la clase “ElementoController” 	
+
+## Punto 1.4
+Entiendo que lo que se pedía era la notificación en si. No la lógica de estar validando cada X tiempo si algún elemento del inventario ya caduco.
+
+## Utilización de librerías externas en el front
 Hago uso de moment.js una pequeña librería que me permite trabajar con formatos de tipo fecha mas fácilmente. 
 Mas que todo para enviar la fecha de caducidad a la acción "AgregarElemento" ya que si no tiene el formato MM-dd-yyyy el servidor no reconoce el formato e inicializa el parametro en DateTime.Min
 

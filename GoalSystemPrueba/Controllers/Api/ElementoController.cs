@@ -34,7 +34,7 @@ namespace GoalSystemPrueba.Controllers.Api
             if (cantidad > 0)
             {
                 Notificador notificador = new Notificador("http://www.ejemplo.com");
-                notificador.NotificarEliminaciones(nombre).Wait();
+                notificador.NotificarEliminaciones(nombre);
             }
 
             return cantidad;

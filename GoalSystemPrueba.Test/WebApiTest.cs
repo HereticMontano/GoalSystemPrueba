@@ -22,6 +22,7 @@ namespace GoalSystemPrueba.Test
             Assert.AreNotSame(cantidadElementosInicio, provider.All().Count);
         }
 
+        [TestMethod]
         public void BajaElemento()
         {
             InventarioProvider provider = new InventarioProvider();
