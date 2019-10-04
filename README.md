@@ -1,8 +1,8 @@
-# GoalSystem Prueba
+# GoalSystems Prueba
 
 ## Forma de ejecución
 Para probar los 4 puntos hay unit test por cada punto.
-Si se desea probar el punto 1.1 y 1.2 con una interfaz ejecutar directamente desde visual studio utilizando IIS Express (recomendado) o creando un sitio en IIS y publicándolo en el.
+Si se desea probar el punto 1.1 y 1.2 con una interfaz, ejecutar directamente desde visual studio utilizando IIS Express (recomendado) o creando un sitio en IIS y publicándolo en el.
 
 ## Arquitectura
 Una simple arquitectura en capas, la capa de presentación, y la de datos se han modelado. 
