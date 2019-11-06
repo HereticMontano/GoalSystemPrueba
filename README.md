@@ -10,7 +10,7 @@ Una simple arquitectura en capas, la capa de presentación, y la de datos se han
 No se implemento la capa de negocios para simplificar un poco, ya que casi no hay logica de negocios y seria solo un pasa manos, 
 pero estoy consciente que el front no debería conocer a los provider ni a las entidades y se deberían usar Services/DTO respectivamente que serian estructurado en la capa de negocio.
 
-##Patron de diseño
+## Patron de diseño
 Usea inyecion de dependencia, y también metí un singleton para el Notificador (Si la app va a ser uso intensivo de notificaciones tal vez un patrón de tipo observador sea mas interesante)
 
 ## Notificador
