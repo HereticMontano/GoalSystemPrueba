@@ -4,7 +4,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using Unity;
 
-namespace GoalSystemPrueba.App_Start
+namespace GoalSystemPrueba
 {
     public class UnityConfig
     {
