@@ -12,7 +12,7 @@ namespace GoalSystemPrueba.Singleton
             {
                 if (_notificador == null)
                 {
-                    _notificador = new Notificador(ConfigurationManager.AppSettings.Get("URLNotificacion"));
+                    _notificador = new Notificador("http://www.ejemplo.com");
                 }
                 return _notificador;
             }
