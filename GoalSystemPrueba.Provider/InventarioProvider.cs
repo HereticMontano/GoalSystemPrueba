@@ -2,6 +2,7 @@
 using GoalSystemPrueba.Provider.Interface;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace GoalSystemPrueba.Provider
 {
@@ -22,15 +23,27 @@ namespace GoalSystemPrueba.Provider
             return Mock;
         }
 
-        public void AgregarElemento(Elemento elemento)
+        public Elemento GetById(string id)
+        {
+            return All().Find(x => x.Nombre == id);
+        }
+
+        public void Agregar(Elemento elemento)
         {
             All().Add(elemento);
         }
 
-        public int EliminarPorNombre(string nombre)
+        public int Eliminar(string id)
         {
-            return All().RemoveAll(x => x.Nombre.Equals(nombre, StringComparison.OrdinalIgnoreCase));
+            return All().RemoveAll(x => x.Nombre.Equals(id, StringComparison.OrdinalIgnoreCase));
         }
+
+        public Elemento GetMasAntiguo()
+        {
+            return All().OrderByDescending(x => x.FechaCaducidad).First();
+        }
+
+       
     }
 }
 

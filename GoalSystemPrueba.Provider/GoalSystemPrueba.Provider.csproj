@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entity\Elemento.cs" />
+    <Compile Include="Interface\IBaseProvider.cs" />
     <Compile Include="Interface\IInventarioProvider.cs" />
     <Compile Include="InventarioProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

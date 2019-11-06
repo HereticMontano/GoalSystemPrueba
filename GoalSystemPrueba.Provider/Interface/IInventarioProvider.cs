@@ -1,14 +1,9 @@
 ﻿using GoalSystemPrueba.Provider.Entity;
-using System.Collections.Generic;
 
 namespace GoalSystemPrueba.Provider.Interface
 {
-    public interface IInventarioProvider
+    public interface IInventarioProvider : IBaseProvider<Elemento, string>
     {
-        List<Elemento> All();
-
-        void AgregarElemento(Elemento elemento);
-
-        int EliminarPorNombre(string nombre);
+        Elemento GetMasAntiguo();
     }
 }

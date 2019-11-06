@@ -25,7 +25,7 @@ namespace GoalSystemPrueba.Controllers.Api
         {
             if (ModelState.IsValid)
             {
-                InventarioProv.AgregarElemento(new Elemento { Nombre = elemento.Nombre, FechaCaducidad = elemento.FechaCaducidad, Tipo = (int)elemento.Tipo });
+                InventarioProv.Agregar(new Elemento { Nombre = elemento.Nombre, FechaCaducidad = elemento.FechaCaducidad, Tipo = (int)elemento.Tipo });
                 return Ok();
             }
 
@@ -35,7 +35,7 @@ namespace GoalSystemPrueba.Controllers.Api
         [HttpPost]
         public IHttpActionResult QuitarElemento([FromBody]string nombre)
         {
-            int cantidad = InventarioProv.EliminarPorNombre(nombre);
+            int cantidad = InventarioProv.Eliminar(nombre);
 
             //Asumo que seria practico que el metodo que quita elementos tambien lo notifique (pero esto deberi ir mas a la capa de negocio). 
             if (cantidad > 0)
