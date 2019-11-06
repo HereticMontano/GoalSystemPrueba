@@ -1,4 +1,5 @@
 ﻿using GoalSystemPrueba.Notifica;
+using System.Configuration;
 
 namespace GoalSystemPrueba.Singleton
 {
@@ -11,7 +12,7 @@ namespace GoalSystemPrueba.Singleton
             {
                 if (_notificador == null)
                 {
-                    _notificador = new Notificador("http://www.ejemplo.com");
+                    _notificador = new Notificador(ConfigurationManager.AppSettings.Get("URLNotificacion"));
                 }
                 return _notificador;
             }
