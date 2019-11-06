@@ -11,18 +11,20 @@ namespace GoalSystemPrueba.Test
         public void NotificarEliminacion()
         {
             Notificador not = new Notificador("http://www.ejemplo.com");
-            bool result = not.NotificarEliminaciones("Cuadro");
-          
-            Assert.IsFalse(result);
+            var ts = not.NotificarEliminacionesAsync("Cuadro");
+            Task.WaitAll(ts);
+
+            Assert.IsFalse(ts.Result);
         }
 
         [TestMethod]
         public void NotificarVencimiento()
         {
             Notificador not = new Notificador("http://www.ejemplo.com");
-            bool result = not.NotificarVencimiento("Cuadro");
+            var ts = not.NotificarVencimientoAsync("Cuadro");
+            Task.WaitAll(ts);
 
-            Assert.IsFalse(result);
+            Assert.IsFalse(ts.Result);
         }
     }
 }

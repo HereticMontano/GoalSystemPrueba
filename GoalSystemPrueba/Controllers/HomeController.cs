@@ -6,7 +6,7 @@ namespace GoalSystemPrueba.Controllers
 {
     public class HomeController : Controller
     {
-        private InventarioProvider InventarioProv;
+        private InventarioProvider InventarioProv { get; set; }
 
         public HomeController()
         {

@@ -3,6 +3,7 @@ using System.Web.Http;
 using GoalSystemPrueba.Atributos;
 using GoalSystemPrueba.Provider;
 using GoalSystemPrueba.Notifica;
+using GoalSystemPrueba.Singleton;
 
 namespace GoalSystemPrueba.Controllers.Api
 {
@@ -32,10 +33,7 @@ namespace GoalSystemPrueba.Controllers.Api
 
             //Asumo que seria practico que el metodo que quita elementos tambien lo notifique. 
             if (cantidad > 0)
-            {
-                Notificador notificador = new Notificador("http://www.ejemplo.com");
-                notificador.NotificarEliminaciones(nombre);
-            }
+                _ = NotificadorSingleton.GetInstance.NotificarEliminacionesAsync(nombre);
 
             return cantidad;
         }

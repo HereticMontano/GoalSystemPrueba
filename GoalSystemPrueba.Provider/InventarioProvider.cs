@@ -8,7 +8,7 @@ namespace GoalSystemPrueba.Provider
     /// </summary>
     public class InventarioProvider
     {
-        private static List<Elemento> FuenteDatos = new List<Elemento>
+        private static List<Elemento> Mock = new List<Elemento>
         {
             new Elemento { Nombre = "Velador", Tipo = 1, FechaCaducidad = DateTime.Parse("22/08/19")},
             new Elemento { Nombre = "Cuadro", Tipo = 2, FechaCaducidad = DateTime.Parse("16/01/22")},
@@ -17,7 +17,7 @@ namespace GoalSystemPrueba.Provider
 
         public List<Elemento> All()
         {
-            return FuenteDatos;
+            return Mock;
         }
 
         public void AgregarElemento(Elemento elemento)

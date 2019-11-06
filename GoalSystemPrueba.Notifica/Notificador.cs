@@ -16,14 +16,14 @@ namespace GoalSystemPrueba.Notifica
             Domain = new Uri(domain);
         }
 
-        public bool NotificarEliminaciones(string elemento)
+        public async Task<bool> NotificarEliminacionesAsync(string elemento)
         {
             using (var client = GenerarCliente())
             {
                 //Esto va a elevar una exepcion ya que a la URL que se le informa no existe
                 try
                 {
-                    var response = client.PostAsJsonAsync("api/Informacion/Eliminacion", new { ElementoEliminado = elemento }).Result;
+                    var response = await client.PostAsJsonAsync("api/Informacion/Eliminacion", new { ElementoEliminado = elemento });
 
                     return response.IsSuccessStatusCode;
                 }
@@ -34,14 +34,14 @@ namespace GoalSystemPrueba.Notifica
             }
         }
 
-        public bool NotificarVencimiento(string elemento)
+        public async Task<bool> NotificarVencimientoAsync(string elemento)
         {
             using (var client = GenerarCliente())
             {
                 //Esto va a elevar una exepcion ya que a la URL que se le informa no existe
                 try
                 {
-                    var response = client.PostAsJsonAsync("api/Informacion/Vencimiento", new { ElementoVencido = elemento }).Result;
+                    var response = await client.PostAsJsonAsync("api/Informacion/Vencimiento", new { ElementoVencido = elemento });
 
                     return response.IsSuccessStatusCode;
                 }
