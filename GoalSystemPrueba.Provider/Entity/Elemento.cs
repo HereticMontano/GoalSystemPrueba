@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GoalSystemPrueba.Provider
+namespace GoalSystemPrueba.Provider.Entity
 {
     /// <summary>
     /// Entidad que representa los dato extraido de una consulta

@@ -40,7 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Elemento.cs" />
+    <Compile Include="Entity\Elemento.cs" />
+    <Compile Include="Interface\IInventarioProvider.cs" />
     <Compile Include="InventarioProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

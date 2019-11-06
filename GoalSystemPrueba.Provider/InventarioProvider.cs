@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GoalSystemPrueba.Provider.Entity;
+using GoalSystemPrueba.Provider.Interface;
+using System;
 using System.Collections.Generic;
 
 namespace GoalSystemPrueba.Provider
@@ -6,7 +8,7 @@ namespace GoalSystemPrueba.Provider
     /// <summary>
     /// El provider de la "tabla" en base de inventario
     /// </summary>
-    public class InventarioProvider
+    public class InventarioProvider : IInventarioProvider
     {
         private static List<Elemento> Mock = new List<Elemento>
         {

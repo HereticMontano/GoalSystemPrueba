@@ -1,16 +1,18 @@
-﻿using GoalSystemPrueba.Models;
-using GoalSystemPrueba.Provider;
+﻿using GoalSystemPrueba.Atributos;
+using GoalSystemPrueba.Models;
+using GoalSystemPrueba.Provider.Interface;
 using System.Web.Mvc;
 
 namespace GoalSystemPrueba.Controllers
 {
+    [SeguridadAttribute]
     public class HomeController : Controller
     {
-        private InventarioProvider InventarioProv { get; set; }
+        private IInventarioProvider InventarioProv { get; set; }
 
-        public HomeController()
+        public HomeController(IInventarioProvider inventarioProvider)
         {
-            InventarioProv = new InventarioProvider();
+            InventarioProv = inventarioProvider;
         }
 
         public ActionResult Index()

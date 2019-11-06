@@ -4,6 +4,8 @@ using GoalSystemPrueba.Atributos;
 using GoalSystemPrueba.Provider;
 using GoalSystemPrueba.Notifica;
 using GoalSystemPrueba.Singleton;
+using GoalSystemPrueba.Provider.Entity;
+using GoalSystemPrueba.Provider.Interface;
 
 namespace GoalSystemPrueba.Controllers.Api
 {
@@ -13,11 +15,11 @@ namespace GoalSystemPrueba.Controllers.Api
     [SeguridadAttribute]
     public class ElementoController : ApiController
     {
-        private InventarioProvider InventarioProv;
+        private IInventarioProvider InventarioProv;
 
-        public ElementoController()
+        public ElementoController(IInventarioProvider inventarioProvider) //
         {
-            InventarioProv = new InventarioProvider();
+            InventarioProv = inventarioProvider;
         }
 
         [HttpPost]
@@ -31,7 +33,7 @@ namespace GoalSystemPrueba.Controllers.Api
         {
             int cantidad = InventarioProv.EliminarPorNombre(nombre);
 
-            //Asumo que seria practico que el metodo que quita elementos tambien lo notifique. 
+            //Asumo que seria practico que el metodo que quita elementos tambien lo notifique (pero esto deberi ir mas a la capa de negocio). 
             if (cantidad > 0)
                 _ = NotificadorSingleton.GetInstance.NotificarEliminacionesAsync(nombre);
 

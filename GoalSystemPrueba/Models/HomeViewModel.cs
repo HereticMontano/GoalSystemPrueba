@@ -1,6 +1,6 @@
 ﻿using GoalSystemPrueba.Enum;
 using GoalSystemPrueba.Models.Api;
-using GoalSystemPrueba.Provider;
+using GoalSystemPrueba.Provider.Entity;
 using System.Collections.Generic;
 
 namespace GoalSystemPrueba.Models

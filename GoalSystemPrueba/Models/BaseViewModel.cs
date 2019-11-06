@@ -5,11 +5,11 @@
     /// </summary>
     public class BaseViewModel
     {
+        public string Title { get; set; }
+
         public BaseViewModel()
         {
             Title = "GoalSystem Prueba";
         }
-
-        public string Title { get; set; }
     }
 }
