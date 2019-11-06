@@ -1,11 +1,9 @@
-﻿using GoalSystemPrueba.Models.Api;
-using System.Web.Http;
-using GoalSystemPrueba.Atributos;
-using GoalSystemPrueba.Provider;
-using GoalSystemPrueba.Notifica;
-using GoalSystemPrueba.Singleton;
+﻿using GoalSystemPrueba.Atributos;
+using GoalSystemPrueba.Models.Api;
 using GoalSystemPrueba.Provider.Entity;
 using GoalSystemPrueba.Provider.Interface;
+using GoalSystemPrueba.Singleton;
+using System.Web.Http;
 
 namespace GoalSystemPrueba.Controllers.Api
 {
@@ -17,19 +15,25 @@ namespace GoalSystemPrueba.Controllers.Api
     {
         private IInventarioProvider InventarioProv;
 
-        public ElementoController(IInventarioProvider inventarioProvider) //
+        public ElementoController(IInventarioProvider inventarioProvider)
         {
             InventarioProv = inventarioProvider;
         }
 
         [HttpPost]
-        public void AgregarElemento(ElementoModel elemento)
+        public IHttpActionResult AgregarElemento(ElementoModel elemento)
         {
-            InventarioProv.AgregarElemento(new Elemento { Nombre = elemento.Nombre, FechaCaducidad = elemento.FechaCaducidad, Tipo = (int)elemento.Tipo });
+            if (ModelState.IsValid)
+            {
+                InventarioProv.AgregarElemento(new Elemento { Nombre = elemento.Nombre, FechaCaducidad = elemento.FechaCaducidad, Tipo = (int)elemento.Tipo });
+                return Ok();
+            }
+
+            return BadRequest(ModelState);
         }
 
         [HttpPost]
-        public int QuitarElemento([FromBody]string nombre)
+        public IHttpActionResult QuitarElemento([FromBody]string nombre)
         {
             int cantidad = InventarioProv.EliminarPorNombre(nombre);
 
@@ -37,7 +41,7 @@ namespace GoalSystemPrueba.Controllers.Api
             if (cantidad > 0)
                 _ = NotificadorSingleton.GetInstance.NotificarEliminacionesAsync(nombre);
 
-            return cantidad;
+            return Ok(cantidad);
         }
     }
 }

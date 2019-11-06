@@ -22,9 +22,9 @@ El mock de los datos se encuentran en InventarioProvider en una propiedad estát
 ## Validaciones y seguridad
 Asumo que puede haber nombres repetidos en la lista de inventario.
 
-No hago ninguna validación de formatos y campos obligatorios por cuestiones de tiempo (Pero debería hacerse tanto del lado del cliente como del servidor).
+No hago ninguna validación de formatos, el unico campo obligatorios es el de nombre, que solo lo valido en el back por cuestiones de tiempo (Pero debería hacerse tanto del lado del cliente como del servidor).
 
-Tampoco de seguridad por el mismo motivo, de todas formas, modele un atributo que hereda de “AuthorizeAttribute” y se usa a la altura de la clase “ElementoController” 	
+Tampoco validaciones de seguridad por el mismo motivo, de todas formas, modele un atributo que hereda de “AuthorizeAttribute” y se usa a la altura de la clase “ElementoController” 	
 
 ## Punto 1.4
 Entiendo que lo que se pedía era la notificación en si. No la lógica de estar validando cada X tiempo si algún elemento del inventario ya caduco.

@@ -11,7 +11,7 @@ namespace GoalSystemPrueba.Singleton
             {
                 if (_notificador == null)
                 {
-                    _notificador = new Notificador("www.ejemplo.com");
+                    _notificador = new Notificador("http://www.ejemplo.com");
                 }
                 return _notificador;
             }

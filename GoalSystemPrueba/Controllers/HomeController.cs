@@ -1,11 +1,9 @@
-﻿using GoalSystemPrueba.Atributos;
-using GoalSystemPrueba.Models;
+﻿using GoalSystemPrueba.Models;
 using GoalSystemPrueba.Provider.Interface;
 using System.Web.Mvc;
 
 namespace GoalSystemPrueba.Controllers
 {
-    [SeguridadAttribute]
     public class HomeController : Controller
     {
         private IInventarioProvider InventarioProv { get; set; }
