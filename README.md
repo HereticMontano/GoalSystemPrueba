@@ -7,7 +7,11 @@ Si se desea probar el punto 1.1 y 1.2 con una interfaz, ejecutar directamente de
 ## Arquitectura
 Una simple arquitectura en capas, la capa de presentación, y la de datos se han modelado. 
 
-No se implemento la capa de negocios para simplificar un poco, ya que casi no hay logica de negocios y seria solo un pasa manos.
+No se implemento la capa de negocios para simplificar un poco, ya que casi no hay logica de negocios y seria solo un pasa manos, 
+pero estoy consciente que el front no debería conocer a los provider ni a las entidades y se deberían usar Services/DTO respectivamente que serian estructurado en la capa de negocio.
+
+##Patron de diseño
+Usea inyecion de dependencia, y también metí un singleton para el Notificador (Si la app va a ser uso intensivo de notificaciones tal vez un patrón de tipo observador sea mas interesante)
 
 ## Notificador
 Hice que el notificador sea su propio proyecto para poder escalarlo y reutilizarlo mas fácilmente, por ahora notificaría solo a través de httpClient, pero también se podrían mandar mails o cualquier otro medio de comunicación.
@@ -30,4 +34,3 @@ Hago uso de moment.js una pequeña librería que me permite trabajar con formato
 Mas que todo para enviar la fecha de caducidad a la acción "AgregarElemento" ya que si no tiene el formato MM-dd-yyyy el servidor no reconoce el formato e inicializa el parametro en DateTime.Min
 
 Probablemente haya soluciones mas robustas con respecto a la configuración del formato de fecha que esta esperando. Pero esta es la mas simple y rápida que decidí implementar.
-

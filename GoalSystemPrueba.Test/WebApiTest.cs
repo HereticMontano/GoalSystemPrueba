@@ -15,7 +15,7 @@ namespace GoalSystemPrueba.Test
             InventarioProvider provider = new InventarioProvider();
             var cantidadElementosInicio = provider.All().Count;
 
-            ElementoController elemento = new ElementoController();
+            ElementoController elemento = new ElementoController(provider);
 
             elemento.AgregarElemento(new ElementoModel { Nombre = "Test", Tipo = Enum.TipoElementoEnum.Iluminacion, FechaCaducidad = DateTime.Now });
 
@@ -28,7 +28,7 @@ namespace GoalSystemPrueba.Test
             InventarioProvider provider = new InventarioProvider();
             var cantidadElementosInicio = provider.All().Count;
 
-            ElementoController elemento = new ElementoController();
+            ElementoController elemento = new ElementoController(provider);
 
             elemento.QuitarElemento("Cuadro");
 
